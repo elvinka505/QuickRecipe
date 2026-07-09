@@ -1,0 +1,28 @@
+# Dependencies
+/vendor/
+
+# Environment
+.env
+
+# Database
+database/*.db
+
+# Runtime
+/runtime/
+
+# IDE
+.idea/
+.vscode/
+
+# PHPUnit
+.phpunit.cache/
+
+# Coverage
+/build/
+
+# macOS
+.DS_Store
+
+# Misc
+composer.phar
+test.php

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        bootstrap="vendor/autoload.php"
+        colors="true"
+        cacheDirectory=".phpunit.cache"
+        beStrictAboutTestsThatDoNotTestAnything="false"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Integration">
+            <directory>tests/Integration</directory>
+        </testsuite>
+        <testsuite name="Controller">
+            <directory>tests/Controller</directory>
+        </testsuite>
+    </testsuites>
+
+    <source>
+        <include>
+            <directory suffix=".php">src/Controllers</directory>
+            <directory suffix=".php">src/Core</directory>
+            <directory suffix=".php">src/Exceptions</directory>
+        </include>
+        <exclude>
+            <directory suffix=".php">src/Views</directory>
+            <directory suffix=".php">src/Models</directory>
+        </exclude>
+    </source>
+
+    <php>
+        <const name="PROJECT_ROOT" value="."/>
+        <env name="APP_ENV" value="testing"/>
+    </php>
+
+    <coverage>
+        <report>
+            <html outputDirectory="build/coverage"/>
+            <text outputFile="php://stdout"/>
+        </report>
+    </coverage>
+</phpunit>
